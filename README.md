@@ -36,7 +36,7 @@
    - 初期デザイン案([portfolio.pdf](https://github.com/x-ktd-x/portfolio/files/10883265/portfolio.pdf))からフロントエンドのコーディング作業中に変更を重ねています。
 3. フロントエンド
    - HTML,CSS,JavaScriptで構成しています。
-   - CSSのプロパティはVSCodeの拡張機能を使用して揃えています。
+   - CSSのプロパティはVSCodeの拡張機能CSSCombを使用して揃えています。
    - JSのシャッフルテキストのライブラリはこちらを使用させていただきました⇨(https://ics.media/entry/15498/)
    
    
