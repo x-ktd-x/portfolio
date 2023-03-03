@@ -37,9 +37,21 @@
    - 初期デザイン案([portfolio.pdf](https://github.com/x-ktd-x/portfolio/files/10883265/portfolio.pdf))からフロントエンドのコーディング作業中に変更を重ねています。
 3. フロントエンド
    - HTML,CSS,JavaScriptで構成しています。
-   - VSCodeのLiveServerとChromeの開発ツールを使用しながら開発しています。
+   - VSCodeのLiveServerとChromeの開発ツールを使用しながら開発しました。
    - CSSのプロパティはVSCodeの拡張機能CSSCombを使用して揃えています。
    - JSのシャッフルテキストのライブラリはこちらを使用させていただきました⇨(https://ics.media/entry/15498/)
 4. バックエンド
    - Django + Gunicorn + Nginxのよくある構成です。
-   - 
+   - Python3.8、Django4.1、Gunicorn20.1、Nginx1.18を使用しています。
+   - サーバーはコスパを考えてAmazon Lightsailを使用しています。OSはUbuntu20.04です。
+   - テストサーバーは使わなくなった自宅PCにUbuntu20.04を入れてサーバー化したものを使用しています。
+   - ドメインはAmazon Route53で取得したものを使用しています。
+   - SSL証明書発行はCertbotを通じてLet's Encryptから、自動更新はcronを通じて行っています。
+<br>
+
+## 反省点
+---
+- ページ数が少なかったため作業の手間を考えてDjangoのテンプレート継承機能を使用していませんでしたが、後々のことを考えると使った方がよかったなと反省しています。
+- そんなに複雑なデザインではなかったので「⌘ + F」でワード検索しながらいけるやろ…と思っていましたが普通に管理し辛かったのでCSSにベタ書きではなくSassを使うべきだったと反省しています。
+## 反省点
+## 反省点
