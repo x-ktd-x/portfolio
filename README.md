@@ -11,4 +11,4 @@
 
 # 構成図
 ---
-![構成図](　"構成図")
+![構成図](![Portfolio構成図面](https://user-images.githubusercontent.com/53157210/222729455-c873eb65-8abd-4181-888e-f53683da3ba0.png)　"構成図")
