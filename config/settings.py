@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.get_value('DEBUG', bool)
 
 # デプロイの際はenv.get_value('DEBUG', bool)を入れといてね
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
@@ -121,8 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATIC_ROOT = f'/home/ubuntu/{BASE_DIR.name}/static'
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
