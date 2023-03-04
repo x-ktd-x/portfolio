@@ -1,0 +1,759 @@
+/* ---------------------------
+base
+--------------------------- */
+
+html {
+    animation: fade 1s ease forwards;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(45deg, #3bade3,#9844b7,#44ea76);
+    background-size: 200% 200%;
+    color: #ffffff;
+    animation: bg-gradient 10s ease infinite;
+}
+
+a {
+    color: #ffffff;
+    font-family: "Noto Sans JP", sans-serif;
+    text-decoration: none;
+}
+
+p {
+    font-weight: light;
+    line-height: 24px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+li {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.text-link {
+    color: #d7beff;
+}
+
+.mobile {
+    display: none;
+}
+
+::selection {
+    background-color: #ffffff;
+    color: #9844b7;
+}
+
+/* ---------------------------
+header
+--------------------------- */
+
+.header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: .4px solid #ffffff;
+
+            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url("/static/img/ktd_white.png") left top / 64px no-repeat;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 80px;
+}
+
+.nav-menu {
+    display: none;
+}
+
+
+/* ---------------------------
+MV
+--------------------------- */
+
+.mv-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* 菱形 */
+.rect {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 72px 0 120px 0;
+    overflow: hidden;
+    animation: flash .5s linear .7s forwards;
+
+    rotate: 45deg;
+}
+
+/* ロゴ */
+.rect .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 152px;
+    height: 152px;
+    background-image: url("/static/img/ktd_white.png");
+    background-position: top left;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation: fade .6s linear 0s;
+
+    transform-origin: 0 0;
+    rotate: -45deg;
+}
+
+/* 菱形枠線の共通設定（frameはrectの擬似要素で足りない二つの線を補うための要素） */
+.rect::before, .rect::after, .rect .frame::before, .rect .frame::after {
+    position: absolute;
+    background: #ffffff; /*線の色*/
+    content: "";
+}
+
+.rect::before {
+    top: -200px;
+    left: 0;
+    width: 1.2px;
+    height: 200px;
+    animation: bottomAnim .1s linear .2s forwards;
+}
+
+.rect::after {
+    bottom: 0;
+    left: -200px;
+    width: 200px;
+    height: 1.2px;
+    animation: topAnim .08s linear .3s forwards;
+}
+
+.rect .frame::before {
+    right: 0;
+    bottom: -200px;
+    width: 1.2px;
+    height: 200px;
+    animation: rightAnim .05s linear .4s forwards;
+}
+
+.rect .frame::after {
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 1.2px;
+    animation: leftAnim .05s linear .5s forwards;
+}
+
+/* 「Welcome to my portfolio!」 */
+.welcome-wrapper {
+    margin-bottom: 72px;
+}
+
+.welcome {
+    display: inline-block;
+    font-family: "Noto Sans JP", sans-serif;
+    animation: fade 1.2s ease-in forwards;
+}
+
+
+/* スクロールを促すオブジェクト */
+.scroll-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-wrapper > div {
+    transform: rotate(-45deg);
+    width: 24px;
+    height: 24px;
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.scroll-wrapper > div:nth-child(1) {
+    animation: fade 1s ease-in infinite;
+}
+
+.scroll-wrapper > div:nth-child(2) {
+    animation: fade 1s ease-in .1s infinite;
+}
+
+.scroll-wrapper > div:nth-child(3) {
+    animation: fade 1s ease-in .2s infinite;
+}
+
+/* ---------------------------
+section
+--------------------------- */
+
+.section-wrapper {
+    padding: 160px 0;
+}
+
+.section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 260px;
+    padding: 0 12px;
+}
+
+.section-title-wrapper {
+    display: flex;
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    margin: 0 32px 0 32px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.title-decoration {
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+    border: 1px solid #ffffff;
+}
+
+.title-decoration-left {
+    position: absolute;
+    top: 12px;
+    left: -12px;
+    transform: rotate(45deg);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+}
+
+.title-decoration-right {
+    position: absolute;
+    top: 12px;
+    right: -12px;
+    transform: rotate(45deg);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+}
+
+.more-wrapper {
+    position: relative;
+    padding: 8px 16px;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.more-wrapper:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.more-wrapper:active {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/* ---------------------------
+About me
+--------------------------- */
+
+.explanation-wrapper {
+    margin-bottom: 48px;
+}
+
+.explanation {
+    text-align: center;
+}
+
+/* figure */
+.history-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 760px;
+}
+
+.past {
+    margin-right: 24px;
+    margin-bottom: 80px;
+    padding-bottom: 20px;
+}
+
+.future {
+    margin-bottom: 80px;
+    margin-left: 24px;
+    padding-bottom: 20px;
+}
+
+.figure-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.baloon-wrapper-first {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baloon-wrapper-second {
+    display: flex;
+    justify-content: center;
+}
+
+.baloon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 16px 16px;
+    border: 1px solid #ffffff;
+}
+
+.baloon > p {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.first::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+    content: "";
+}
+
+.second::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+    content: "";
+}
+
+.third::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 8px solid transparent;
+    border-bottom-color: #ffffff;
+    content: "";
+}
+
+.border-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+}
+
+.border {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #ffffff, #00000000, #ffffff);
+    background-size: 200% 200%;
+    animation: borderGradient 2s linear infinite;
+}
+
+
+
+/* -------------------------
+Works
+------------------------- */
+
+.works-explanation {
+    margin-bottom: 64px;
+}
+
+.work-title {
+    margin-bottom: 32px;
+    font-size: 24px;
+}
+
+.work-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.work-img {
+    max-width: 512px;
+    margin-bottom: 56px;
+    background-color: #d7beff;
+
+    translate: .3s;
+}
+
+.work-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px -4px rgba(255,255,255,.6);
+}
+
+.work-explanation {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.tools-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tools-title::before, .tools-title::after {
+    width: 100px;
+    height: 1px;
+    background-color: #ffffff;
+    content: "";
+}
+
+.tools-title::before {
+    margin-right: 16px;
+}
+
+.tools-title::after {
+    margin-left: 16px;
+}
+
+.tools {
+    text-align: center;
+}
+
+.work-explanation-border {
+    margin-bottom: 24px;
+    padding: 8px;
+    border: solid 1px #ffffff;
+}
+
+
+/* -------------------------
+Skills
+------------------------- */
+
+.skill-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.skill-icon {
+    width: 144px;
+    height: 144px;
+    margin-bottom: 32px;
+}
+
+.star-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.star {
+    padding: 0 2px;
+}
+
+.explanation-skill-wrapper {
+    text-align: center;
+}
+
+/* ---------------------------
+footer
+--------------------------- */
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    margin-top: 96px;
+    border-top: 1px solid #ffffff;
+}
+
+.footer-inner {
+    margin: 16px 0;
+}
+
+/* -------------------------
+アニメーション 
+------------------------- */
+
+/* 背景アニメーション */
+@keyframes bg-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* フェードアニメーション */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 菱形描画アニメーション */
+@keyframes topAnim {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes bottomAnim {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes rightAnim {
+    0% {
+        bottom: -200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes leftAnim {
+    0% {
+        right: -200px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+/* 菱形点滅アニメーション */
+@keyframes flash {
+    0%, 75%, 100% {
+        opacity: 1;
+    }
+
+    50%, 85% {
+        opacity: 0;
+    }
+}
+
+/* past→futureアニメーション */
+@keyframes borderGradient {
+    0% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------
+モバイル
+------------------------- */
+
+@media (max-width: 888px) {
+    /* ---------------------------
+    base
+    --------------------------- */
+
+    .mobile {
+        display: block;
+    }
+
+    /* ---------------------------
+    header
+    --------------------------- */
+
+    .nav-menu {
+        display: block;
+        padding: 16px 24px 0 0;
+        cursor: pointer;
+    }
+
+    .nav-menu > div {
+        width: 32px;
+        height: 1px;
+        margin-bottom: 12px;
+        background-color: #ffffff;
+        transition: transform .3s;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    /* メニュータップ後 */
+    .menu-click .mv-wrapper {
+        margin-top: 64px;
+    }
+
+    .menu-click .header-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .menu-click .nav-menu > div:nth-child(1) {
+        transform: translateY(13px) rotate(135deg);
+    }
+
+    .menu-click .nav-menu > div:nth-child(2) {
+        transform: scaleX(0);
+    }
+
+    .menu-click .nav-menu > div:nth-child(3) {
+        transform: translateY(-13px) rotate(405deg);
+    }
+
+    .menu-click .header-nav {
+        position: relative;
+    }
+
+    .menu-click .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 20vh;
+        transform: translateX(-50%);
+    }
+
+    .menu-click .nav-item {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        margin: 10vh 0 0 0;
+    }
+
+    /* ---------------------------
+    MV
+    --------------------------- */
+
+    /* 菱形 */
+    .rect {
+        width: 160px;
+        height: 160px;
+        margin: 72px 0 96px 0;
+    }
+
+    /* ロゴ */
+    .rect .logo {
+        width: 128px;
+        height: 128px;
+    }
+
+    /* 「Welcome to my portfolio!」 */
+    .welcome-wrapper {
+        margin-bottom: 64px;
+    }
+
+    /* ---------------------------
+    section
+    --------------------------- */
+
+    .section-wrapper {
+        padding: 120px 0;
+        overflow: hidden;
+    }
+
+    .section-inner {
+        margin: 0;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    /* ---------------------------
+    About me
+    --------------------------- */
+
+    .explanation-wrapper {
+        margin-bottom: 48px;
+    }
+
+    /* figure */
+    .history-wrapper {
+        display: none;
+    }
+
+    /* -------------------------
+    Works
+    ------------------------- */
+
+    .work-wrapper {
+        margin-bottom: 88px;
+    }
+
+    .work-img-pc {
+        display: none;
+    }
+
+    .work-img-mobile {
+        display: block;
+        width: 100%;
+        margin-bottom: 48px;
+        background-color: #d7beff;
+    }
+
+    .work-explanation {
+        margin-bottom: 32px;
+    }
+
+    .tools-title::before, .tools-title::after {
+        width: 80px;
+    }
+}

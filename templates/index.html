@@ -1,0 +1,236 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="駆け出しエンジニアktdのポートフォリオです。">
+    <title>ktd's portfolio</title>
+    <link rel="icon" href="{% static '/img/favicon.ico'%}" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header-wrapper">
+        <div class="header-inner">
+            <h1 class="logo" onclick="menuClose()"><a href="#"></a></h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item" onclick="menuClose()"><a href="#">Home</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#aboutme">About me</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#works">Works</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+            <div class="nav-menu" onclick="menuOpen()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- MV -->
+        <div id="mv" class="mv-wrapper">
+            <div class="rect">
+                <div class="logo"></div>
+                <div class="frame"></div>
+            </div>
+            <div class="welcome-wrapper">
+                <span class="welcome">Welcome to my portfolio!</span>
+            </div>
+            <div class="scroll-wrapper">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <!-- About me -->
+        <section class="section-wrapper" id="aboutme">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h2 class="section-title">About me</h2>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <div class="explanation-wrapper">
+                    <p class="explanation">
+                        Web開発の勉強を始めて<br class="mobile">一年ほどになります。<br>
+                        好奇心旺盛で色んなものに飛び付きます。<br>
+                        飛び付いて得たものを組み合わせて<br class="mobile">何かを作るのが好きです。<br>
+                        どうぞよろしくお願いいたします。
+                    </p>
+                </div>
+                <div class="history-wrapper">
+                    <p class="past">Past</p>
+                    <div class="figure-wrapper">
+                        <div class="baloon-wrapper-first">
+                            <div class="baloon first">
+                                <p>
+                                    被災を切っ掛けに農学部を中退し、藝大受験するも不合格。<br>
+                                    表現媒体について考える中でプログラミング言語に思い当たり、<br>
+                                    その自由度とインパクトに惹かれる。
+                                </p>
+                            </div>
+                            <div class="baloon second">
+                                <p>
+                                    主にWeb開発を中心に独学で勉強中。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="border-wrapper">
+                            <div class="border"></div>
+                        </div>
+                        <div class="baloon-wrapper-second">
+                            <div class="baloon third">
+                                <p>
+                                    SAGA Smart Samurai 2期生として入校。<br>
+                                    Python基礎学習、自動販売機システム修正演習、<br>
+                                    RaspberryPiを使った監視カメラ開発を経験。<br>
+                                    講義中、Flask、Djangoを知ったことによりWeb開発に興味を持つ。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="future">Future</p>
+                </div>
+                <a href="{% url 'about' %}" class="more-wrapper">MORE</a>
+            </div>
+        </section>
+
+        <!-- Works -->
+        <section class="section-wrapper" id="works">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h2 class="section-title">Works</h2>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <p class="works-explanation">まだ制作物が少ないですが、<br class="mobile">順次追加していく予定です。</p>
+                <div class="work-wrapper">
+                    <p class="work-title">Portfolio</p>
+                    <a href="#"><img src="{% static '/img/work01-pc.png' %}" alt="work-img" class="work-img"></a>
+                    <p class="work-explanation">
+                        このサイトです。<br>
+                        まずはWebアプリケーションの<br class="mobile">基本を理解するべく<br>
+                        ページを表示するだけの<br class="mobile">簡単なサイトを<br>
+                        作ってみよう、ということで<br class="mobile">作り始めました。<br>
+                        詳細は<a class="text-link" href="https://github.com/x-ktd-x/portfolio#readme" target="_blank" rel="noopener noreferrer">こちら</a>（GitHubに飛びます）。
+                    </p>
+                    <p class="tools-title">使用言語・技術等</p>
+                    <p class="tools">
+                        HTML/CSS/JavaScript/Django/<br class="mobile">Nginx/Gunicorn/AWS Lightsail(Ubuntu)<br>
+                        Adobe XD/Adobe Illustrator
+                    </p>
+                </div>
+                <a href="{% url 'works' %}" class="more-wrapper">MORE</a>            
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section-wrapper" id="skills">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h2 class="section-title">Skills</h2>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <!-- HTML -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/html.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://prog-8.com/courses/html" target="_blank" rel="noopener noreferrer" class="text-link">Progate</a>で基礎学習しました。<br>
+                                未定着のタグ等は、<br>
+                                開発を通じて時折リファレンスを<br class="mobile">参照しながら習得中です。<br>
+                                複雑なデザインにも対応できるように、<br>
+                                今後数を重ねていくことが<br class="mobile">重要だと感じています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/css.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://prog-8.com/courses/html" target="_blank" rel="noopener noreferrer" class="text-link">Progate</a>、<a href="https://www.udemy.com/course/front-dev-tutorial/" target="_blank" rel="noopener noreferrer" class="text-link">Udemy</a>で基礎学習しました。<br>
+                                未定着のプロパティ等は、<br>
+                                開発を通じて時折リファレンスを<br class="mobile">参照しながら習得中です。<br>
+                                複雑なデザインにも対応できるように、<br>
+                                今後数を重ねていくことが<br class="mobile">重要だと感じています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/js.svg'' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://www.udemy.com/course/front-dev-tutorial/" target="_blank" rel="noopener noreferrer" class="text-link">Udemy</a>で基礎学習しました。<br>
+                                未定着の関数等は、<br>
+                                開発を通じて都度リファレンスを参照しながら<br class="mobile">習得中です。<br>
+                                DOM操作で少々使用する程度でしたが、<br>
+                                最近はフレームワークの学習も進めています。<br>
+                                DOMについては<a href="https://zenn.dev/antez/articles/b6eb22cb228a49" target="_blank" rel="noopener noreferrer" class="text-link">こちらの記事</a>を参考に<br>不明な概念・用語を調べて理解を深めました。<br>
+                                TypeScriptも少し触り始めました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'skills' %}" class="more-wrapper">MORE</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-inner">
+            <p><small class="copyright">©2022 Hiroaki Katada</small></p>
+        </div>
+    </footer>
+    <script src="{% static '/js/shuffle-text.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

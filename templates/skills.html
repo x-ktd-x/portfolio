@@ -1,0 +1,314 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="駆け出しエンジニアktdのポートフォリオです。">
+    <title>ktd's portfolio</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/css/skills.css' %}">
+</head>
+<body>
+    
+    <!-- header -->
+    <header class="header-wrapper">
+        <div class="header-inner">
+            <h1 class="logo"><a href="{% url 'index' %}"></a></h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'about' %}">About me</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'works' %}">Works</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#">Skills</a></li>
+                </ul>
+            </nav>
+            <div class="nav-menu" onclick="menuOpen()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- Skills -->
+        <section class="section-wrapper" id="skills">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h2 class="section-title">Skills</h2>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <div class="explanation-wrapper">
+                    <p class="explanation">
+                        Web開発に興味を持って日が浅いため<br class="mobile">疑問点が多く、<br>
+                        気になっていろんな技術に触れていくうちに、<br>
+                        「広く浅く」といった感じになりました。<br>
+                        即戦力になれる領域があるか？と問われると<br class="mobile">自信がないですが、<br>
+                        触れた事のない技術のチュートリアルを<br>
+                        不明点を調べながらこなす程度であれば<br class="mobile">問題なくできます。<br>
+                    </p>
+                </div>
+                <!-- HTML -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/html.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://prog-8.com/courses/html" target="_blank" rel="noopener noreferrer" class="text-link">Progate</a>で基礎学習しました。<br>
+                                未定着のタグ等は、<br>
+                                開発を通じて時折リファレンスを<br class="mobile">参照しながら習得中です。<br>
+                                今後は複雑なデザインに対応できるよう、<br>
+                                数を重ねていくことが<br class="mobile">重要だと感じています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/css.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://prog-8.com/courses/html" target="_blank" rel="noopener noreferrer" class="text-link">Progate</a>、<a href="https://www.udemy.com/course/front-dev-tutorial/" target="_blank" rel="noopener noreferrer" class="text-link">Udemy</a>で基礎学習しました。<br>
+                                未定着のプロパティ等は、<br>
+                                開発を通じて時折リファレンスを<br class="mobile">参照しながら習得中です。<br>
+                                今後は複雑なデザインに対応できるよう、<br>
+                                数を重ねていくことが<br class="mobile">重要だと感じています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/js.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://www.udemy.com/course/front-dev-tutorial/" target="_blank" rel="noopener noreferrer" class="text-link">Udemy</a>で基礎学習しました。<br>
+                                未定着の関数等は、<br>
+                                開発を通じて都度リファレンスを参照しながら<br class="mobile">習得中です。<br>
+                                DOM操作で少々使用する程度でしたが、<br>
+                                最近はフレームワークの学習も進めています。<br>
+                                DOMについては<a href="https://zenn.dev/antez/articles/b6eb22cb228a49" target="_blank" rel="noopener noreferrer" class="text-link">こちらの記事</a>を参考に<br>不明な概念・用語を調べて理解を深めました。<br>
+                                TypeScriptも少し触り始めました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next.js -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/nextjs.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                ドキュメントやブログ記事を参考に<br class="mobile">現在学習中です。<br>
+                                サーバーレス&外部APIを使用することで<br class="mobile">開発の手間を減らして<br>
+                                コンテンツに注力できるような<br class="mobile">構成が可能だということは<br>
+                                Next.jsの学習を通じて知りました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Python -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/python.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://www.saga-pg.com/" target="_blank" rel="noopener noreferrer" class="text-link">SAGA Smart Samurai</a>2期生として<br class="mobile">参加した際に基礎学習しました。<br>
+                                未定着の関数等は、<br>
+                                開発を通じて都度リファレンスを<br class="mobile">参照しながら習得中です。<br>
+                                特にデータ分析、機械学習に興味があり、<br>
+                                マイペースで学習しています。<br>
+                                機械学習モデルをDjangoに組み込んで<br>
+                                何かしら作ってみたいなと思っています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Django -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/django.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://zenn.dev/akiyoko/articles/6bc03e7f954570" target="_blank" rel="noopener noreferrer" class="text-link">書籍</a>を参考に基礎学習しました。<br>
+                                最初に触ったのはFlaskでしたが、<br>
+                                より多機能で汎用性が高いということで、<br class="mobile">Djangoの勉強を始めました。<br>
+                                Webアプリケーションの基本は<br class="mobile">Djangoを通じて学びました。<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- GitHub -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/github.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://www.saga-pg.com/" target="_blank" rel="noopener noreferrer" class="text-link">SAGA Smart Samurai</a>2期生として<br class="mobile">参加した際に基礎学習しました。<br>
+                                branchを使った複数人での<br class="mobile">開発経験はありません。<br>
+                                スクールでの演習の際は、<br class="mobile">clone,pull,add,commit,pushのみを使って<br>
+                                開発しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- RaspberryPi -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/raspberrypi.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://www.saga-pg.com/" target="_blank" rel="noopener noreferrer" class="text-link">SAGA Smart Samurai</a>2期生として<br class="mobile">参加した際に基礎学習しました。<br>
+                                初めてLinuxやCLI、viを触ったのは、<br class="mobile">RaspberryPiを通じてでした。<br>
+                                ネットワークについて何となくでしか<br class="mobile">理解できていないので、<br>
+                                いずれRaspberryPiで仮想ルータを<br class="mobile">作ってみたいなと思っています。<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- XD -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/xd.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                <a href="https://xdtrail.com/" target="_blank" rel="noopener noreferrer" class="text-link">Adove XD Trail</a>で基礎学習しました。<br>
+                                デザインカンプの作成に使用しています。<br>
+                                まだまだ全機能をスムーズに<br class="mobile">扱えるわけではありませんが、<br>
+                                公式サイトの<a href="https://kentei.adobe.com/top" target="_blank" rel="noopener noreferrer" class="text-link">Adove XD 検定</a>は<br class="mobile">初級〜上級まで修了しています。<br>
+                                最近はFigmaへの移行を考えています。<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Illustrator -->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/ai.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                趣味で断続的に2年ほど触っていました。<br>
+                                Web開発においてはロゴ等装飾の<br class="mobile">作成・編集で補助的に使用しています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Figma-->
+                <div class="skill-wrapper">
+                    <img src="{% static '/img/figma.svg' %}" alt="skill-icon" class="skill-icon">
+                    <div class="star-wrapper">
+                        <div class="star-container">
+                            <div class="star">★</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                            <div class="star">☆</div>
+                        </div>
+                        <div class="explanation-skill-wrapper">
+                            <p class="explanation-skill">
+                                XDの積極的なサービス展開が終了したため<br class="mobile">学習を始めました。<br>
+                                まだ少ししか触っていませんが、<br class="mobile">XDをある程度触っていたので<br>
+                                学習コストは低めに感じています。<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="back-to-top-wrapper">
+            <a href="#" class="back-to-top"></a>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-inner">
+            <p><small class="copyright">©2022 Hiroaki Katada</small></p>
+        </div>
+    </footer>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/js/aboutme.js' %}"></script>
+</body>
+</html>

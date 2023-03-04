@@ -1,0 +1,346 @@
+/* ---------------------------
+base
+--------------------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(45deg, #3bade3,#9844b7,#44ea76);
+    background-size: 200% 200%;
+    color: #ffffff;
+    animation: bg-gradient 10s ease infinite;
+}
+
+a {
+    color: #ffffff;
+    font-family: "Noto Sans JP", sans-serif;
+    text-decoration: none;
+}
+
+p {
+    font-weight: light;
+    line-height: 24px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+li {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.text-link {
+    color: #d7beff;
+}
+
+.mobile {
+    display: none;
+}
+
+::selection {
+    background-color: #ffffff;
+    color: #9844b7;
+}
+
+/* ---------------------------
+header
+--------------------------- */
+
+.header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: .4px solid #ffffff;
+
+            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url("/static/img/ktd_white.png") left top / 64px no-repeat;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 80px;
+}
+
+.nav-menu {
+    display: none;
+}
+
+/* ---------------------------
+section
+--------------------------- */
+
+.section-wrapper {
+    padding: 160px 0;
+    overflow: hidden;
+}
+
+.section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 260px;
+}
+
+.section-title-wrapper {
+    display: flex;
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    margin: 0 32px 0 32px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.title-decoration {
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+    border: 1px solid #ffffff;
+}
+
+.title-decoration-left {
+    position: absolute;
+    top: 12px;
+    left: -12px;
+    transform: rotate(45deg);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+}
+
+.title-decoration-right {
+    position: absolute;
+    top: 12px;
+    right: -12px;
+    transform: rotate(45deg);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+}
+
+/* -------------------------
+Skills
+------------------------- */
+
+.explanation-wrapper {
+    margin-bottom: 48px;
+}
+
+.explanation {
+    text-align: center;
+}
+
+.skill-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.skill-icon {
+    width: 144px;
+    height: 144px;
+    margin-bottom: 32px;
+}
+
+.star-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.star {
+    padding: 0 2px;
+}
+
+.explanation-skill-wrapper {
+    text-align: center;
+}
+
+/* back-to-top */
+
+.back-to-top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 256px;
+}
+
+.back-to-top {
+    display: block;
+    display: flex;
+    justify-content: center;
+    width: 36px;
+    padding: 24px 16px 16px 16px;
+    border: 1px solid #ffffff;
+}
+
+.back-to-top::after {
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    content: "";
+}
+
+.back-to-top:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.back-to-top:active {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/* ---------------------------
+footer
+--------------------------- */
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    margin-top: 96px;
+    border-top: 1px solid #ffffff;
+}
+
+.footer-inner {
+    margin: 16px 0;
+}
+
+/* -------------------------
+アニメーション 
+------------------------- */
+
+/* 背景アニメーション */
+@keyframes bg-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+/* -------------------------
+モバイル
+------------------------- */
+
+@media (max-width: 888px) {
+    /* ---------------------------
+    base
+    --------------------------- */
+
+    .mobile {
+        display: block;
+    }
+
+    /* ---------------------------
+    header
+    --------------------------- */
+
+    .nav-menu {
+        display: block;
+        padding: 16px 24px 0 0;
+        cursor: pointer;
+    }
+
+    .nav-menu > div {
+        width: 32px;
+        height: 1px;
+        margin-bottom: 12px;
+        background-color: #ffffff;
+        transition: transform .3s;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    /* メニュータップ後 */
+    .menu-click .mv-wrapper {
+        margin-top: 64px;
+    }
+
+    .menu-click .header-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .menu-click .nav-menu > div:nth-child(1) {
+        transform: translateY(13px) rotate(135deg);
+    }
+
+    .menu-click .nav-menu > div:nth-child(2) {
+        transform: scaleX(0);
+    }
+
+    .menu-click .nav-menu > div:nth-child(3) {
+        transform: translateY(-13px) rotate(405deg);
+    }
+
+    .menu-click .header-nav {
+        position: relative;
+    }
+
+    .menu-click .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 20vh;
+        transform: translateX(-50%);
+    }
+
+    .menu-click .nav-item {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        margin: 10vh 0 0 0;
+    }
+
+    /* ---------------------------
+    section
+    --------------------------- */
+
+    .section-wrapper {
+        padding: 120px 0;
+        overflow: hidden;
+    }
+
+    .section-inner {
+        margin: 0;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+}

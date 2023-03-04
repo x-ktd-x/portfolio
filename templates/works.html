@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="駆け出しエンジニアktdのポートフォリオです。">
+    <title>ktd's portfolio</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/css/works.css' %}">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header-wrapper">
+        <div class="header-inner">
+            <h1 class="logo" onclick="menuClose()"><a href="{% url 'index' %}"></a></h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'about' %}">About me</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#">Works</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'skills' %}">Skills</a></li>
+                </ul>
+            </nav>
+            <div class="nav-menu" onclick="menuOpen()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- Works -->
+        <section class="section-wrapper" id="works">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h2 class="section-title">Works</h2>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <p class="works-explanation">まだ制作物が少ないですが、<br class="mobile">順次追加していく予定です。</p>
+                <div class="work-wrapper">
+                    <p class="work-title">Portfolio</p>
+                    <a href="{% url 'index' %}"><img src="{% static '/img/work01-pc.png' %}" alt="work-img" class="work-img"></a>
+                    <p class="work-explanation">
+                        このサイトです。<br>
+                        まずはWebアプリケーションの<br class="mobile">基本を理解するべく<br>
+                        ページを表示するだけの<br class="mobile">簡単なサイトを<br>
+                        作ってみよう、ということで<br class="mobile">作り始めました。<br>
+                        詳細は<a class="text-link" href="https://github.com/x-ktd-x/portfolio" target="_blank" rel="noopener noreferrer">こちら</a>（GitHubに飛びます）。
+                    </p>
+                    <p class="tools-title">使用言語・技術等</p>
+                    <p class="tools">
+                        HTML/CSS/JavaScript/Django/<br class="mobile">Nginx/Gunicorn/AWS Lightsail(Ubuntu)<br>
+                        Adobe XD/Adobe Illustrator
+                    </p>
+                </div>
+                <div class="work-wrapper">
+                    <p class="work-title">Blog</p>
+                    <p class="work-explanation-border">現在製作中です。</p>
+                    <p class="work-explanation">
+                        APIを通じて利用できるサービスと<br>
+                        サーバーレスアーキテクチャを併用することで<br>
+                        コンテンツ作成に注力できる構成を実現したいと考え、<br>
+                        手始めにブログを作ってみようと思いました。<br>
+                        Next.jsをはじめ、Sass、Figmaなど<br>
+                        未経験の技術へのチャレンジも兼ねています。
+                    </p>
+                    <p class="tools-title">使用言語・技術等</p>
+                    <p class="tools">
+                        HTML/CSS(Sass)/TypeScript/Next.js/<br class="mobile">microCMS/Vercel<br>
+                        Figma/Adobe Illustrator
+                    </p>
+                <div>
+            </div>
+        </section>
+        <div class="back-to-top-wrapper">
+            <a href="#" class="back-to-top"></a>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-inner">
+            <p><small class="copyright">©2022 Hiroaki Katada</small></p>
+        </div>
+    </footer>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

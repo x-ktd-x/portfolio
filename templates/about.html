@@ -1,0 +1,250 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="駆け出しエンジニアktdのポートフォリオです。">
+    <title>ktd's portfolio</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/css/about.css' %}">
+</head>
+<body>
+    
+    <!-- header -->
+    <header class="header-wrapper">
+        <div class="header-inner">
+            <h1 class="logo"><a href="{% url 'index' %}"></a></h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="#">About me</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'works' %}">Works</a></li>
+                    <li class="nav-item" onclick="menuClose()"><a href="{% url 'skills' %}">Skills</a></li>
+                </ul>
+            </nav>
+            <div class="nav-menu" onclick="menuOpen()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- About me -->
+        <section class="section-wrapper">
+            <div class="section-inner">
+                <div class="section-title-wrapper">
+                    <span class="title-decoration-left"></span>
+                    <span class="title-decoration"></span>
+                    <h1 class="section-title">About me</h1>
+                    <span class="title-decoration"></span>
+                    <span class="title-decoration-right"></span>
+                </div>
+                <div class="explanation-wrapper">
+                    <p class="explanation">
+                        Web開発の勉強を始めて<br class="mobile">一年ほどになります。<br>
+                        好奇心旺盛で色んなものに飛び付きます。<br>
+                        飛び付いて得たものを組み合わせて<br class="mobile">何かを作るのが好きです。<br>
+                        どうぞよろしくお願いいたします。
+                    </p>
+                </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>スキルについて</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    <a href="{% url 'skills' %}" target="_blank" rel="noopener noreferrer" class="text-link">こちら</a>をご覧ください。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>開発環境について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    PCはmacOS Monterey、<br class="mobile">エディタはVisual Studio Codeを<br>使用しています。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>これまでの学習について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    局所的に特定のスキルを<br class="mobile">ただ勉強するのではなく、<br>
+                                    Web制作全体のフローを、<br>
+                                    できるだけディレクターに<br class="mobile">近い目線で把握した上で<br>
+                                    個別のスキルを学習しました。<br>
+                                    そうすることでより効果的な学習ができると考えました。<br>
+                                    参考にさせて頂いたサイトは<br class="mobile"><a href="https://nana-tsu.jp/pre/805/" target="_blank" rel="noopener noreferrer" class="text-link">こちら</a>。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>これからの学習について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    メモリ管理やデータ構造、<br class="mobile">アルゴリズムなど、<br>
+                                    エンジニアを続ける上で<br class="mobile">広く深く効いてくる基礎知識を<br>
+                                    きちんと把握する「懐の広さ」と、<br class="mobile">昨今ではChatGPTなど、<br>
+                                    既存の枠組みを変えうるような<br class="mobile">インパクトを持っている<br>
+                                    新技術をすぐに試して活用する<br class="mobile">「突破力」を念頭に学習を進めて<br>
+                                    いくつもりです。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>初めてプログラミングに<br class="mobile">興味を持ったきっかけについて</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    藝大受験を決意して<br class="mobile">大学を中退し、<br>
+                                    絵を描きながら様々なことに<br class="mobile">思いを巡らせる中で、<br>
+                                    表現媒体としての自由度と<br class="mobile">インパクトに惹かれて<br>
+                                    興味を持ったのが最初です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>初めてWeb開発に<br class="mobile">興味を持ったきっかけについて</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    <a href="https://www.saga-pg.com/" target="_blank" rel="noopener noreferrer" class="text-link">SAGA Smart Samurai</a>に<br class="mobile">2期生として入校した際、<br>
+                                    講義中にFlask、Djangoを<br class="mobile">知ったことにより<br>
+                                    Web開発に興味を持ちました。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>社会人経験について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    正社員としての<br class="mobile">社会人経験はありません。<br>
+                                    アルバイト、派遣、契約が<br class="mobile">主なものになります。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>社会人以前の、<br class="mobile">社会人として役立つ<br class="mobile">経験について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    小学校から中学校までの9年間、<br>
+                                    サッカークラブと部活動で<br class="mobile">主将を務めた経験があり、<br>
+                                    チームを率いる為に<br class="mobile">大切な原則を学びました。<br>
+                                    また、大学中退以降、<br class="mobile">創作に集中した数年間で<br>
+                                    自身の価値観の幅が<br class="mobile">広がった点は、<br>
+                                    コミュニケーションの幅が<br class="mobile">広がることと同義であり、<br>
+                                    どのような場所であっても<br class="mobile">活きる経験だと感じています。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>最近興味のあることについて</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    ジェネレーティブAIが<br class="mobile">すごいことになってるので<br>ワクワクが止まりません。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="triangle-wrapper">
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="about-wrapper">
+                            <div class="about">
+                                <p>趣味について</p>
+                            </div>
+                            <div class="detail">
+                                <p>
+                                    個人開発、サッカー(する/観る)、<br>
+                                    絵(描く/みる)、音楽(作曲/聴く)、<br>
+                                    読書、Notion etc...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="back-to-top-wrapper">
+            <a href="#" class="back-to-top"></a>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-inner">
+            <p><small class="copyright">©2022 Hiroaki Katada</small></p>
+        </div>
+    </footer>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/js/about.js' %}"></script>
+</body>
+</html>
