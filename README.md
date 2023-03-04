@@ -12,7 +12,7 @@
 
 ## 構成図
 ---
-![Portfolio構成図面](https://user-images.githubusercontent.com/53157210/222747028-c057c125-eeab-47a1-82aa-ca9681e99a47.png)
+![Portfolio構成図面](https://user-images.githubusercontent.com/53157210/222891021-e7e2ff38-a385-4dd4-9969-4ef5af740f55.png)
 <br>
 <br>
 
