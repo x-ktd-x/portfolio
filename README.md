@@ -33,7 +33,7 @@
    - 基本的に**8の倍数px**でデザインしました。
    - **レスポンシブ対応**で、ブレイクポイントは**888px**です。設定理由としては**タブレットをスマホ表示**にして**8の倍数かつ覚えやすいゾロ目**にするためです。
    - ピクセルパーフェクトは想定していません。
-   - **初期デザイン案**([portfolio.pdf](https://github.com/x-ktd-x/portfolio/files/10883265/portfolio.pdf))からフロントエンドのコーディング作業中に変更を重ねています。
+   - **初期デザイン案**([portfolio.pdf](https://github.com/x-ktd-x/portfolio/files/10883265/portfolio.pdf))からいくつか変更を重ねています。
 3. **フロントエンド**
    - **HTML,CSS,JavaScript**で構成しています。
    - VSCodeの**LiveServer**と**Chromeの開発ツール**を使用しながら開発しました。
